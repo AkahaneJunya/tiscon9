@@ -25,9 +25,11 @@
       入力内容をご確認ください。<br/>
       この内容でお見積りする場合は、「概算お見積もりをする」ボタンを押してください。
     </div>
+    <!--
     <ul th:if="${#fields.hasErrors('tel')}">
       <li th:each="err : ${#fields.errors('tel')}" th:text="${err}"></li>
     </ul>
+    -->
     <div class="col-sm-12">
       <div class="sub-title">お客様情報</div>
       <table class="table table-bordered">
@@ -44,17 +46,16 @@
           <input type="hidden" name="customerName" id="customerName" th:value="*{customerName}"/>
         </tr>
         <tr>
-          <th>連絡先TEL </br> <ul th:if="${#fields.hasErrors('tel')}">
-            <div class = errorMessage th:each="err : ${#fields.errors('tel')}" th:text="電話番号の入力形式が違います"></div>
-            </ul>
+          <th>
+            連絡先TEL </br> <div class = errorMessage th:each="err : ${#fields.errors('tel')}" th:text="電話番号の入力形式が違います"></div>
           </th>
           <td><span th:text="*{tel}"></span></td>
           <input type="hidden" name="tel" id="tel" th:value="*{tel}"/>
         </tr>
         <tr>
-          <th>連絡先メールアドレス  </br> <ul th:if="${#fields.hasErrors('email')}">
-            <div class = errorMessage th:each="err : ${#fields.errors('email')}" th:text="メールアドレスの入力形式が違います"></div>
-            </ul> </th>
+          <th>
+            連絡先メールアドレス  </br> <div class = errorMessage th:each="err : ${#fields.errors('email')}" th:text="メールアドレスの入力形式が違います"></div>
+          </th>
           <td><span th:text="*{email}"></span></td>
           <input type="hidden" name="email" id="email" th:value="*{email}"/>
         </tr>
@@ -75,9 +76,7 @@
           <input type="hidden" name="oldPrefectureId" id="oldPrefectureId" th:value="*{oldPrefectureId}"/>
         </tr>
         <tr>
-          <th>集荷元住所（市区町村以下）</br> <ul th:if="${#fields.hasErrors('oldAddress')}">
-            <div class = errorMessage th:each="err : ${#fields.errors('oldAddress')}" th:text="集荷元住所（市区町村以下）の入力形式が違います"></div>
-            </ul> </th>
+          <th>集荷元住所（市区町村以下）</br> <div class = errorMessage th:each="err : ${#fields.errors('oldAddress')}" th:text="集荷元住所（市区町村以下）の入力形式が違います"></div> </th>
           <td><span th:text="*{oldAddress}"></span></td>
           <input type="hidden" name="oldAddress" id="oldAddress" th:value="*{oldAddress}"/>
         </tr>
@@ -89,9 +88,9 @@
           <input type="hidden" name="newPrefectureId" id="newPrefectureId" th:value="*{newPrefectureId}"/>
         </tr>
         <tr>
-          <th>お届け先住所（市区町村以下）</br> <ul th:if="${#fields.hasErrors('newAddress')}">
-            <div class = errorMessage th:each="err : ${#fields.errors('newAddress')}" th:text="お届け先住所（市区町村以下）の入力形式が違います"></div>
-            </ul> </th>
+          <th>
+            お届け先住所（市区町村以下）</br> <div class = errorMessage th:if="${#fields.hasErrors('newAddress')}" th:each="err : ${#fields.errors('newAddress')}" th:text="お届け先住所（市区町村以下）の入力形式が違います"></div>
+          </th>
           <td><span th:text="*{newAddress}"></span></td>
           <input type="hidden" name="newAddress" id="newAddress" th:value="*{newAddress}"/>
         </tr>
@@ -105,30 +104,30 @@
           <col span="2" style="background-color: #FFFFFF;">
           <tbody>
           <tr>
-            <th style="width: 40%">段ボールの個数 </br> <ul th:if="${#fields.hasErrors('box')}">
-              <div class = errorMessage th:each="err : ${#fields.errors('box')}" th:text="段ボールの個数の入力形式が違います"></div>
-              </ul> </th>
+            <th style="width: 40%">
+              段ボールの個数 </br> <div class = errorMessage th:if="${#fields.hasErrors('box')}" th:each="err : ${#fields.errors('box')}" th:text="段ボールの個数の入力形式が違います"></div>
+            </th>
             <td><span th:text="*{box}"></span></td>
             <input type="hidden" name="box" id="box" th:value="*{box}"/>
           </tr>
           <tr>
-            <th>ベッドの個数 </br> <ul th:if="${#fields.hasErrors('bed')}">
-              <div class = errorMessage th:each="err : ${#fields.errors('bed')}" th:text="ベッドの個数の入力形式が違います"></div>
-              </ul></th>
+            <th>
+              ベッドの個数 </br> <div class = errorMessage th:if="${#fields.hasErrors('bed')}" th:each="err : ${#fields.errors('bed')}" th:text="ベッドの個数の入力形式が違います"></div>
+            </th>
             <td><span th:text="*{bed}"></span></td>
             <input type="hidden" name="bed" id="bed" th:value="*{bed}"/>
           </tr>
           <tr>
-            <th>自転車の個数 </br> <ul th:if="${#fields.hasErrors('bicycle')}">
-              <div class = errorMessage th:each="err : ${#fields.errors('bicycle')}" th:text="自転車の個数の入力形式が違います"></div>
-              </ul> </th>
+            <th>
+              自転車の個数 </br> <div class = errorMessage th:each="err : ${#fields.errors('bicycle')}" th:text="自転車の個数の入力形式が違います"></div>
+            </th>
             <td><span th:text="*{bicycle}"></span></td>
             <input type="hidden" name="bicycle" id="bicycle" th:value="*{bicycle}"/>
           </tr>
           <tr>
-            <th>洗濯機の個数 </br> <ul th:if="${#fields.hasErrors('washingMachine')}">
-              <div class = errorMessage th:each="err : ${#fields.errors('washingMachine')}" th:text="洗濯機の個数の入力形式が違います"></div>
-              </ul></th>
+            <th>
+              洗濯機の個数 </br> <div class = errorMessage th:if="${#fields.hasErrors('washingMachine')}" th:each="err : ${#fields.errors('washingMachine')}" th:text="洗濯機の個数の入力形式が違います"></div>
+            </th>
             <td><span th:text="*{washingMachine}"></span></td>
             <input type="hidden" name="washingMachine" id="washingMachine" th:value="*{washingMachine}"/>
           </tr>
