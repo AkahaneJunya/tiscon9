@@ -26,6 +26,8 @@ public class UserOrderDto {
 
     private boolean washingMachineInstallation;
 
+    private String newdate;
+
     public String getCustomerName() {
         return customerName;
     }
@@ -105,6 +107,14 @@ public class UserOrderDto {
     public void setBicycle(String bicycle) {
         this.bicycle = bicycle;
     }
+
+    public String getNewdate() {
+        return newdate;
+    }
+
+    public void setNewdate(String newdate) {
+        this.newdate = newdate;
+    }    
 
     public int getWashingMachine() {
         return Integer.parseInt(washingMachine);

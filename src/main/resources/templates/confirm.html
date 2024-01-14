@@ -63,7 +63,7 @@
       </table>
     </div>
     <div class="col-sm-12">
-      <div class="sub-title">集荷元・お届け先</div>
+      <div class="sub-title">集荷元・お届け先・お引っ越し予定月</div>
       <table class="table table-bordered">
         <col span="1" style="background-color: #FFFFFF;">
         <col span="2" style="background-color: #FFFFFF;">
@@ -75,11 +75,13 @@
           </td>
           <input type="hidden" name="oldPrefectureId" id="oldPrefectureId" th:value="*{oldPrefectureId}"/>
         </tr>
+        <!--
         <tr>
           <th>集荷元住所（市区町村以下）</br> <div class = errorMessage th:each="err : ${#fields.errors('oldAddress')}" th:text="集荷元住所（市区町村以下）の入力形式が違います"></div> </th>
           <td><span th:text="*{oldAddress}"></span></td>
           <input type="hidden" name="oldAddress" id="oldAddress" th:value="*{oldAddress}"/>
         </tr>
+        -->
         <tr>
           <th>お届け先住所（都道府県）</th>
           <td>
@@ -87,12 +89,21 @@
           </td>
           <input type="hidden" name="newPrefectureId" id="newPrefectureId" th:value="*{newPrefectureId}"/>
         </tr>
+        <!--
         <tr>
           <th>
             お届け先住所（市区町村以下）</br> <div class = errorMessage th:if="${#fields.hasErrors('newAddress')}" th:each="err : ${#fields.errors('newAddress')}" th:text="お届け先住所（市区町村以下）の入力形式が違います"></div>
           </th>
           <td><span th:text="*{newAddress}"></span></td>
           <input type="hidden" name="newAddress" id="newAddress" th:value="*{newAddress}"/>
+        </tr>
+        -->
+        <tr>
+          <th>
+            お引っ越し予定月</br> <div class = errorMessage th:if="${#fields.hasErrors('newdate')}" th:each="err : ${#fields.errors('newdate')}" th:text="選択されていません"></div>
+          </th>
+          <td><span th:text="*{newdate}"></span></td>
+          <input type="hidden" name="newdate" id="newdate" th:value="*{newdate}"/>
         </tr>
         </tbody>
       </table>

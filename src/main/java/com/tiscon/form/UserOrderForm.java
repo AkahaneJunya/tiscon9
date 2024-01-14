@@ -5,6 +5,7 @@ import com.tiscon.validator.Numeric;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -28,13 +29,13 @@ public class UserOrderForm {
     @NotBlank
     private String oldPrefectureId;
 
-    @NotBlank
+    
     private String oldAddress;
 
     @NotBlank
     private String newPrefectureId;
 
-    @NotBlank
+    
     private String newAddress;
 
     @Numeric
@@ -56,7 +57,7 @@ public class UserOrderForm {
     @NotNull
     private boolean washingMachineInstallation;
 
-    @Numeric
+    @NotEmpty
     private String newdate;
 
     public String getCustomerName() {
