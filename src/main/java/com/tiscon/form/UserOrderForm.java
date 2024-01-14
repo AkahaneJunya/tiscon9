@@ -1,3 +1,4 @@
+
 package com.tiscon.form;
 
 import com.tiscon.validator.Numeric;
@@ -54,6 +55,9 @@ public class UserOrderForm {
 
     @NotNull
     private boolean washingMachineInstallation;
+
+    @Numeric
+    private String newdate;
 
     public String getCustomerName() {
         return customerName;
@@ -149,5 +153,13 @@ public class UserOrderForm {
 
     public void setWashingMachineInstallation(boolean washingMachineInstallation) {
         this.washingMachineInstallation = washingMachineInstallation;
+    }
+
+    public String getNewdate() {
+        return newdate;
+    }
+
+    public void setNewdate(String newdate) {
+        this.newdate = newdate;
     }
 }
